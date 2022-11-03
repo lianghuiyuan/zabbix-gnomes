@@ -4,7 +4,7 @@
 # pyzabbix is needed, see https://github.com/lukecyca/pyzabbix
 #
 import argparse
-import ConfigParser
+import configparser
 import sys
 import os
 import os.path
@@ -15,18 +15,18 @@ def ConfigSectionMap(section):
     dict1 = {}
     options = Config.options(section)
     for option in options:
- 	try:
-		dict1[option] = Config.get(section, option)
-		if dict1[option] == -1:
-			DebugPrint("skip: %s" % option)
-	except:
-		print("exception on %s!" % option)
-		dict1[option] = None
+        try:
+            dict1[option] = Config.get(section, option)
+            if dict1[option] == -1:
+                DebugPrint("skip: %s" % option)
+        except:
+            print("exception on %s!" % option)
+            dict1[option] = None
     return dict1
 
 def PrintError(error):
     if args.continue_on_error:
-	sys.stderr.write(error + '\n')
+        sys.stderr.write(error + '\n')
     else:
         sys.exit(error)
 
@@ -60,7 +60,7 @@ parser.add_argument('-c','--config', help='Config file location (defaults to $HO
 args = parser.parse_args()
 
 # load config module
-Config = ConfigParser.ConfigParser()
+Config = configparser.ConfigParser()
 Config
 
 # if configuration argument is set, test the config file
@@ -128,7 +128,7 @@ zapi.login(username, password)
 # We need the API version to know if valuemap importing is supported
 try:
     version = zapi.apiinfo.version()
-    print version
+    print(version)
 except:
     error="Error: Could not retrieve Zabbix version"
     PrintError(error)
