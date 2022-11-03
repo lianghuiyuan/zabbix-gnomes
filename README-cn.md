@@ -7,31 +7,55 @@ Zabbix-gnomes 是一组 Zabbix 的开源脚本工具集合，它使用 Python �
 API工具：
 
 zapi.py – 交互式 Zabbix API客户端。
+
 相关历史：
 
 zgethistory.py – 从历史记录获取一个itemid的值。
+
 zhinvswitcher.py – 在主机( 群组组) 上切换 inv。
+
 zgetinventory.py – 以CSV格式打印主机清单。
+
 zhostupdater.py – 更新主机属性。
+
 zhitemfinder.py – 查找主机上的项目。
+
 zgethistory.py – 从历史记录( 不支持趋势) 获取项值。
+
 zhgraphfinder.py – 查找在Zabbix主机上配置的图形。
+
 zgetgraph.py – 从Zabbix前端( 需要用户前端访问) 下载一个图形. PNG 并保存它。
+
 zghostfinder.py – 查找hostgroup中的成员主机。
+
 zhostfinder.py – 根据搜索字符串在Zabbix中查找主机。
+
 zhostupdater.py – 更新主机属性。
+
 zhproxyfinder.py – 为Zabbix主机查找配置的代理。
+
 ztmplimport.py – 将 xml 模板导入 Zabbix。
+
 zhtmplfinder.py – 查找Zabbix主机的链接模板。
+
 zthostfinder.py – 查找链接到模板的主机。
+
 zthtmllinker.py – 将主机( 群组组)的链接链接到模板列表。
+
 zthtmlunlink.py – 将主机( 群组组) 与模板列表断开。
+
 zhtrigfinder.py – 在主机上查找触发器。
+
 ztrigswitcher.py – 将触发器切换为已经启用或者discabled状态。
+
 zhostupdater.py – 更新主机属性。
+
 zeventfinder.py – 基于过滤器(。包含 tail -f 模式) 查找事件。
+
 zgetevent.py – 获取eventIds的详细信息，包括和ack警报操作。
+
 zeventacker.py – 基于eventIds确认事件。
+
 配置 Zabbix-gnomes
 
 这些程序可以使用 .ini 风格的配置文件，来获取所需的API连接信息。它的配置文件默认为 $HOME/.zbx.conf，样例如下：
